@@ -34,13 +34,14 @@
         .hero h1 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
         .highlight { color: var(--primary); }
         
+        /* Subtítulo Adicionado */
         .vsl-sub { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 25px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
         /* Vídeo */
         .vsl-container { max-width: 800px; margin: 0 auto 30px auto; border: 4px solid #30353b; border-radius: 12px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; box-shadow: 0 0 30px rgba(0, 132, 255, 0.2); }
         .vsl-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* SEÇÃO DE CONFIANÇA */
+        /* SEÇÃO DE CONFIANÇA/AUTORIDADE (NOVA) */
         .trust-section { padding: 40px 20px; background: #151719; border-top: 1px solid #333; border-bottom: 1px solid #333; }
         .trust-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; }
         .trust-item { flex: 1; min-width: 280px; text-align: left; display: flex; gap: 15px; align-items: flex-start; }
@@ -69,21 +70,16 @@
         /* Pricing */
         .pricing { padding: 60px 20px; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-        .price-card { background: var(--card-bg); padding: 40px 30px; border-radius: 20px; text-align: center; position: relative; border: 1px solid #333; display: flex; flex-direction: column; }
-        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); z-index: 2; box-shadow: 0 10px 40px rgba(0, 132, 255, 0.2); }
+        .price-card { background: var(--card-bg); padding: 40px 30px; border-radius: 20px; text-align: center; position: relative; border: 1px solid #333; }
+        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); z-index: 2; }
         .price-val { font-size: 3rem; font-weight: 900; margin: 15px 0; }
         .price-val span { font-size: 1rem; }
-        
-        .price-list { list-style: none; text-align: left; margin: 15px 0 25px 0; flex-grow: 1; }
-        .price-list li { font-size: 0.85rem; color: #ddd; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .price-list li::before { content: "✅"; font-size: 0.8rem; }
-        .price-list li.off { color: #666; }
-        .price-list li.off::before { content: "❌"; }
 
+        /* Botão Principal */
         .btn-main { 
             display: inline-block; background: var(--primary); color: white; padding: 18px 35px; 
             border-radius: 50px; font-weight: 800; text-decoration: none; transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(0, 132, 255, 0.3); width: 100%; margin-top: auto;
+            box-shadow: 0 10px 20px rgba(0, 132, 255, 0.3); width: 100%; margin-top: 15px;
             position: relative; overflow: hidden;
         }
         .btn-main::after { content: ""; position: absolute; top: -50%; left: -60%; width: 20%; height: 200%; background: rgba(255, 255, 255, 0.4); transform: rotate(30deg); animation: shine 3s infinite; }
@@ -175,51 +171,40 @@
     <section class="pricing" id="planos">
         <h2 class="section-title" style="font-size: 2rem;">Planos de Acesso</h2>
         <div class="pricing-grid">
-            
             <div class="price-card">
                 <h3>Plano Basic</h3>
                 <p style="color: var(--text-gray);">30 Dias de Acesso</p>
                 <div class="price-val"><span>R$</span> 5,99</div>
-                <ul class="price-list">
-                    <li>Chat Global 100% Ativo</li>
-                    <li>Anti-Ban Versão Lite</li>
-                    <li>Atualizações Mensais</li>
-                    <li class="off">Suporte VIP 24h</li>
-                    <li class="off">Skin Lendária de Brinde</li>
+                <ul style="list-style: none; text-align: left; margin: 15px 0; font-size: 0.85rem; color: #ddd;">
+                    <li>✅ Chat Liberado por 30 Dias</li>
+                    <li>✅ Anti-Ban 2025 Ativo</li>
+                    <li>✅ Suporte via E-mail</li>
                 </ul>
                 <a href="https://ambienteseguro.org.ua/c/1ab96b1491" class="btn-main">OBTER AGORA</a>
             </div>
-
             <div class="price-card featured">
-                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: 800;">MELHOR ESCOLHA</div>
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: 800;">RECOMENDADO</div>
                 <h3>Acesso Vitalício</h3>
-                <p style="color: var(--primary);">Para sempre (Sem Mensalidades)</p>
+                <p style="color: var(--primary);">Para sempre</p>
                 <div class="price-val"><span>R$</span> 12,98</div>
-                <ul class="price-list">
-                    <li>Chat Global Vitalício</li>
-                    <li>Anti-Ban 2025 (Blindado)</li>
-                    <li>Suporte VIP 24h (WhatsApp)</li>
-                    <li>Atualizações Semanais</li>
-                    <li><b>Skin Lendária de Brinde</b></li>
-                    <li>Acesso à Comunidade Privada</li>
+                <ul style="list-style: none; text-align: left; margin: 15px 0; font-size: 0.85rem; color: #ddd;">
+                    <li>✅ Chat Liberado para Sempre</li>
+                    <li>✅ Anti-Ban 2025 Ativo</li>
+                    <li>✅ Suporte Prioritário 24h</li>
                 </ul>
                 <a href="https://ambienteseguro.org.ua/c/1ab96b1491" class="btn-main">BAIXAR VITALÍCIO</a>
             </div>
-
             <div class="price-card">
                 <h3>Plano Prime</h3>
                 <p style="color: var(--text-gray);">90 Dias de Acesso</p>
                 <div class="price-val"><span>R$</span> 9,90</div>
-                <ul class="price-list">
-                    <li>Chat Global 100% Ativo</li>
-                    <li>Anti-Ban Versão Pro</li>
-                    <li>Atualizações Quinzenais</li>
-                    <li>Suporte Padrão (E-mail)</li>
-                    <li class="off">Skin Lendária de Brinde</li>
+                <ul style="list-style: none; text-align: left; margin: 15px 0; font-size: 0.85rem; color: #ddd;">
+                    <li>✅ Chat Liberado por 90 Dias</li>
+                    <li>✅ Anti-Ban 2025 Ativo</li>
+                    <li>✅ Suporte Prioritário</li>
                 </ul>
                 <a href="https://ambienteseguro.org.ua/c/1ab96b1491" class="btn-main">OBTER AGORA</a>
             </div>
-
         </div>
     </section>
 
@@ -234,7 +219,6 @@
     <audio id="pop-sound" src="https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3"></audio>
 
     <script>
-        // Carrossel de Depoimentos
         const reviews = [
             {n: "Mielly", t: "Finalmente consegui falar com meus amigos de novo! Muito fácil."},
             {n: "GamerPro", t: "O chat tá 100% liso. Valeu cada centavo."},
@@ -257,28 +241,19 @@
         `).join('');
         container.innerHTML = content + content;
 
-        // Notificações Dinâmicas com Som
         const names = ["Lucas", "Marcos", "Ana", "Julia", "Davi", "Beatriz", "Gustavo", "Rafael"];
         const notif = document.getElementById('notif-box');
         const sound = document.getElementById('pop-sound');
 
         function showNotif() {
             const name = names[Math.floor(Math.random() * names.length)];
-            document.getElementById('notif-name').innerText = name + " (Ativou o Chat)";
+            document.getElementById('notif-name').innerText = name + " (Liberado)";
             document.getElementById('notif-avatar').innerText = name.charAt(0);
-            
             notif.classList.add('show');
-            // Toca o som aqui
-            sound.play().catch(e => console.log("Áudio aguardando interação"));
-            
-            setTimeout(() => { 
-                notif.classList.remove('show'); 
-            }, 4000);
+            sound.play().catch(() => {});
+            setTimeout(() => { notif.classList.remove('show'); }, 4000);
         }
-
-        // Intervalo de notificação
         setInterval(showNotif, 12000);
-        setTimeout(showNotif, 5000);
     </script>
 </body>
 </html>
