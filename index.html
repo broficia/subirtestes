@@ -74,14 +74,12 @@
         .price-val { font-size: 3rem; font-weight: 900; margin: 15px 0; }
         .price-val span { font-size: 1rem; }
         
-        /* Lista de Benefícios */
         .price-list { list-style: none; text-align: left; margin: 15px 0 25px 0; flex-grow: 1; }
         .price-list li { font-size: 0.85rem; color: #ddd; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
         .price-list li::before { content: "✅"; font-size: 0.8rem; }
         .price-list li.off { color: #666; }
         .price-list li.off::before { content: "❌"; }
 
-        /* Botão Principal */
         .btn-main { 
             display: inline-block; background: var(--primary); color: white; padding: 18px 35px; 
             border-radius: 50px; font-weight: 800; text-decoration: none; transition: 0.3s;
@@ -236,6 +234,7 @@
     <audio id="pop-sound" src="https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3"></audio>
 
     <script>
+        // Carrossel de Depoimentos
         const reviews = [
             {n: "Mielly", t: "Finalmente consegui falar com meus amigos de novo! Muito fácil."},
             {n: "GamerPro", t: "O chat tá 100% liso. Valeu cada centavo."},
@@ -258,19 +257,28 @@
         `).join('');
         container.innerHTML = content + content;
 
+        // Notificações Dinâmicas com Som
         const names = ["Lucas", "Marcos", "Ana", "Julia", "Davi", "Beatriz", "Gustavo", "Rafael"];
         const notif = document.getElementById('notif-box');
         const sound = document.getElementById('pop-sound');
 
         function showNotif() {
             const name = names[Math.floor(Math.random() * names.length)];
-            document.getElementById('notif-name').innerText = name + " (Liberado)";
+            document.getElementById('notif-name').innerText = name + " (Ativou o Chat)";
             document.getElementById('notif-avatar').innerText = name.charAt(0);
+            
             notif.classList.add('show');
-            sound.play().catch(() => {});
-            setTimeout(() => { notif.classList.remove('show'); }, 4000);
+            // Toca o som aqui
+            sound.play().catch(e => console.log("Áudio aguardando interação"));
+            
+            setTimeout(() => { 
+                notif.classList.remove('show'); 
+            }, 4000);
         }
+
+        // Intervalo de notificação
         setInterval(showNotif, 12000);
+        setTimeout(showNotif, 5000);
     </script>
 </body>
 </html>
